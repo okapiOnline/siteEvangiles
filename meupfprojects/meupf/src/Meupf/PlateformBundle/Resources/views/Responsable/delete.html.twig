@@ -1,0 +1,45 @@
+{% extends "MeupfPlateformBundle::layout.html.twig" %}
+
+{# code ne marche pas  ca redirecte sur l'index todo #}
+{% block title %}
+
+    Supprimer un pasteur - {{ parent() }}
+
+{% endblock %}
+
+
+{% block meupfplateform_body %}
+
+
+<h2>Supprimer un pasteur</h2>
+
+
+<p>
+
+    Etes-vous certain de vouloir supprimer le sermon "{{ responsable.title }}" ?
+
+</p>
+
+
+{# On met l'id de l'annonce dans la route de l'action du formulaire #}
+
+<form action="{{ path('meupf_responsable_delete', {'id': responsable.id}) }}" method="post">
+
+    <a href="{{ path('meupf_responsable_view', {'id': responsable.id}) }}" class="btn btn-default">
+
+        <i class="glyphicon glyphicon-chevron-left"></i>
+
+        Retour à la page pasteur
+
+    </a>
+
+    {# Ici j'ai écrit le bouton de soumission à la main #}
+
+    <input type="submit" value="Supprimer" class="btn btn-danger" />
+
+    {# Ceci va générer le champ CSRF #}
+
+    {{ form_rest(form) }}
+
+</form>
+

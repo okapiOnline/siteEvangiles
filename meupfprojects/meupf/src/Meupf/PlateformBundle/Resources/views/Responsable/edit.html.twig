@@ -1,0 +1,16 @@
+{% extends "MeupfPlateformBundle::layout.html.twig" %}
+{% block title %}{{ parent() }} - Pasteur{% endblock %}
+
+{% block body %}
+
+    <h2>Editer les informations du pasteur</h2>
+    <hr/>
+
+    {{ include("MeupfPlateformBundle:Responsable:form.html.twig") }}
+
+    <p>
+        Attention : le pasteur sera modifier directement
+        sur la page d'accueil après validation du formulaire.
+    </p>
+
+{% endblock %}

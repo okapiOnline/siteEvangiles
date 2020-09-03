@@ -1,0 +1,10 @@
+<div class="widget sidebar-widget">
+    <div class="sidebar-widget-title">
+        <h3>Categorie Events</h3>
+    </div>
+    <ul>
+        {% for catEvent in catEvents %}
+            <li><a href="#">{{ catEvent.name }}</a> (10)</li>
+        {% endfor %}
+    </ul>
+</div>

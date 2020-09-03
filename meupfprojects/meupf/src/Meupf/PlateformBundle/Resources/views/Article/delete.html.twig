@@ -1,0 +1,45 @@
+{% extends "MeupfPlateformBundle::layout.html.twig" %}
+
+{# code ne marche pas  ca redirecte sur l'index todo #}
+{% block title %}
+
+    Supprimer une annonce - {{ parent() }}
+
+{% endblock %}
+
+
+{% block meupfplateform_body %}
+
+
+<h2>Supprimer une annonce</h2>
+
+
+<p>
+
+    Etes-vous certain de vouloir supprimer l'annonce "{{ article.title }}" ?
+
+</p>
+
+
+{# On met l'id de l'annonce dans la route de l'action du formulaire #}
+
+<form action="{{ path('meupf_platrform_delete', {'id': article.id}) }}" method="post">
+
+    <a href="{{ path('meupf_platrform_view', {'id': article.id}) }}" class="btn btn-default">
+
+        <i class="glyphicon glyphicon-chevron-left"></i>
+
+        Retour à l'annonce
+
+    </a>
+
+    {# Ici j'ai écrit le bouton de soumission à la main #}
+
+    <input type="submit" value="Supprimer" class="btn btn-danger" />
+
+    {# Ceci va générer le champ CSRF #}
+
+    {{ form_rest(form) }}
+
+</form>
+

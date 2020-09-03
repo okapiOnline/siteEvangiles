@@ -1,0 +1,16 @@
+{% extends "MeupfPlateformBundle::layout.html.twig" %}
+{% block title %}{{ parent() }} - Posts{% endblock %}
+
+{% block body %}
+
+    <h2>Modifier un article</h2>
+    <hr/>
+
+    {{ include("MeupfPlateformBundle:Article:form.html.twig") }}
+
+    <p>
+        Attention : cet article sera modifier directement
+        sur la page d'accueil après validation du formulaire.
+    </p>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+<div class="well">
+    {{ form_errors(form) }}
+    {{ form_start(form) }}
+    <div class="form-group">
+        {{ form_label(form.title, null, {'label': 'Titre','label_attr': {'class': 'foo'}} )}}
+        {{ form_widget(form.title, { 'attr': {'class': 'form-control'} }) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.categorie, null, {'label': 'Categorie','label_attr': {'class': 'foo'}} )}}
+        {{ form_widget(form.categorie, { 'attr': {'class': 'form-control'} }) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.url, null, {'label': 'URL de la video','label_attr': {'class': 'foo'}} )}}
+        {{ form_widget(form.url, { 'attr': {'class': 'form-control'} }) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.type, null, {'label': 'Type','label_attr': {'class': 'foo'}} )}}
+        {{ form_widget(form.type, { 'attr': {'class': 'form-control'} }) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.description, null, {'label': 'Description','label_attr': {'class': 'foo'}} )}}
+        {{ form_widget(form.description, { 'attr': {'class': 'form-control'} }) }}
+    </div>
+    <div class="btn btn-success">
+        {{ form_widget(form.Sauvegarder, { 'attr': {'class': 'btn btn-success'} }) }}
+    </div>
+    {{ form_end(form) }}
+</div>

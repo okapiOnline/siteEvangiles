@@ -1,0 +1,15 @@
+{% extends "MeupfPlateformBundle::layout.html.twig" %}
+{% block title %}{{ parent() }} - Slider{% endblock %}
+{% block body %}
+
+    <h2>Ajouter une image au slider</h2>
+    <hr/>
+
+    {{ include("MeupfPlateformBundle:Slider:form.html.twig") }}
+
+    <p>
+        Attention : cette image sera ajoutée directement
+        sur la page d'accueil après validation du formulaire.
+    </p>
+
+{% endblock %}

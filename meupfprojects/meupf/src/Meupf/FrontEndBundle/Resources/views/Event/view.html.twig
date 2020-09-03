@@ -1,0 +1,21 @@
+{{  include('MeupfFrontEndBundle::header.html.twig') }}
+{{  include('MeupfFrontEndBundle::event_header.html.twig') }}
+{% block body %}
+<!-- Start Content -->
+<div class="main" role="main">
+    <div id="content" class="content full">
+        <div class="container">
+            <div class="row">
+                {{ include('MeupfFrontEndBundle:Event:content.html.twig') }}
+                <!-- Start Sidebar -->
+                <div class="col-md-3 sidebar">
+                    {{ include('MeupfFrontEndBundle::event_sidebar.html.twig') }}
+                    {{ include('MeupfFrontEndBundle::event_categorie_sidebar.html.twig') }}
+                    {{ include('MeupfFrontEndBundle::recent_article_sidebar.html.twig') }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{{  include('MeupfFrontEndBundle::footer.html.twig') }}

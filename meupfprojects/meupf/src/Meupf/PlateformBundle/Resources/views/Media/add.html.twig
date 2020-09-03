@@ -1,0 +1,15 @@
+{% extends "MeupfPlateformBundle::layout.html.twig" %}
+{% block title %}{{ parent() }} - Media{% endblock %}
+{% block body %}
+
+    <h2>Ajouter une video</h2>
+    <hr/>
+
+    {{ include("MeupfPlateformBundle:Media:form.html.twig") }}
+
+    <p>
+        Attention : la video sera ajouté directement
+        sur la page d'accueil après validation du formulaire.
+    </p>
+
+{% endblock %}

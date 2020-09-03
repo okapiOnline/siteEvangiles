@@ -1,0 +1,13 @@
+<!-- Recent Posts Widget -->
+<div class="widget-recent-posts widget">
+    <div class="sidebar-widget-title">
+        <h3>Articles recent</h3>
+    </div>
+    <ul>
+        {% for lastArticle in lastArticles %}
+                <li class="clearfix"> <a href="{{ path('meupf_front_end_view_slug', { 'id': lastArticle.id ,'slug': lastArticle.slug, 'year':  lastArticle.createdAt|date('Y')  }) }}" class="media-box post-image"> <img src="{{ lastArticle.image }}" alt="" class="img-thumbnail"> </a>
+                    <div class="widget-blog-content"><p>{{  lastArticle.content | truncate(70, false, '...') | raw }}</p><span class="meta-data"><i class="fa fa-calendar"></i> on 17th Dec, 2013</span> </div>
+                </li>
+        {% endfor %}
+    </ul>
+</div>

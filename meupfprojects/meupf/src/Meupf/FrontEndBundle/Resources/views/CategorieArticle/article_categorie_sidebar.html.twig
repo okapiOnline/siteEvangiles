@@ -1,0 +1,11 @@
+<div class="widget sidebar-widget">
+    <div class="sidebar-widget-title">
+        <h3>Categories Article</h3>
+    </div>
+    <ul>
+        {% for catpost in catposts %}
+            <li><a href="{{ path('meupf_front_end_all_article_slug', { 'id': catpost.id ,'slug': catpost.slug  }) }}">{{ catpost.name}}</a> (10)</li>
+        {% endfor %}
+
+    </ul>
+</div>

@@ -1,0 +1,558 @@
+meupf_dashboard_home:
+    path:     /dashboard/
+    defaults: { _controller: MeupfPlateformBundle:Dashboard:index, page: 1 }
+
+#route article
+meupf_article_home:
+    path:     /article/{page}
+    defaults: { _controller: MeupfPlateformBundle:Article:index, page: 1 }
+    requirements:
+       page: \d*
+
+meupf_article_view:
+    path:    /Article/{id}
+    defaults: { _controller: MeupfPlateformBundle:Article:view }
+    requirements:
+         id: \d+
+
+meupf_article_add:
+    path:    /article/add
+    defaults: { _controller: MeupfPlateformBundle:Article:add }
+
+
+meupf_article_edit:
+    path:    /article/edit/{id}
+    defaults: { _controller: MeupfPlateformBundle:Article:edit }
+    requirements:
+        id: \d+
+
+meupf_article_delete:
+    path:    /article/delete/{id}
+    defaults: { _controller: MeupfPlateformBundle:Article:delete }
+    requirements:
+        id: \d+
+
+meupf_article_view_slug:
+    path:    /article/{year}/{slug}.{format}
+    defaults:
+          _controller: MeupfPlateformBundle:Article:viewSlug
+          _format     : html
+    requirements:
+        year: \d{4}
+        format: php|html
+
+#route categorie Article
+meupf_categorie_article_home:
+    path:     /article/categorie/{page}
+    defaults: { _controller: MeupfPlateformBundle:CategorieArticle:index, page: 1 }
+    requirements:
+       page: \d*
+
+meupf_categorie_article_view:
+    path:    /article/categorie/{id}
+    defaults: { _controller: MeupfPlateformBundle:CategorieArticle:view }
+    requirements:
+         id: \d+
+
+meupf_categorie_article_add:
+    path:    /article/categorie/add
+    defaults: { _controller: MeupfPlateformBundle:CategorieArticle:add }
+
+
+meupf_categorie_article_edit:
+    path:    /article/categorie/edit/{id}
+    defaults: { _controller: MeupfPlateformBundle:CategorieArticle:edit }
+    requirements:
+        id: \d+
+
+meupf_categorie_article_delete:
+    path:    /article/categorie/delete/{id}
+    defaults: { _controller: MeupfPlateformBundle:CategorieArticle:delete }
+    requirements:
+        id: \d+
+
+meupf_categorie_article_view_slug:
+    path:    /article/categorie/{year}/{slug}.{format}
+    defaults:
+          _controller: MeupfPlateformBundle:CategorieArticle:viewSlug
+          _format     : html
+    requirements:
+        year: \d{4}
+        format: php|html
+
+#route categorie Sermon
+meupf_categorie_sermon_home:
+    path:     /sermon/categorie/{page}
+    defaults: { _controller: MeupfPlateformBundle:CategorieSermon:index, page: 1 }
+    requirements:
+       page: \d*
+
+meupf_categorie_sermon_view:
+    path:    /sermon/categorie/{id}
+    defaults: { _controller: MeupfPlateformBundle:CategorieSermon:view }
+    requirements:
+         id: \d+
+
+meupf_categorie_sermon_add:
+    path:    /sermon/categorie/add
+    defaults: { _controller: MeupfPlateformBundle:CategorieSermon:add }
+
+
+meupf_categorie_sermon_edit:
+    path:    /sermon/categorie/edit/{id}
+    defaults: { _controller: MeupfPlateformBundle:CategorieSermon:edit }
+    requirements:
+        id: \d+
+
+meupf_categorie_sermon_delete:
+    path:    /sermon/categorie/delete/{id}
+    defaults: { _controller: MeupfPlateformBundle:CategorieSermon:delete }
+    requirements:
+        id: \d+
+
+meupf_categorie_sermon_view_slug:
+    path:    /sermon/categorie/{year}/{slug}.{format}
+    defaults:
+          _controller: MeupfPlateformBundle:CategorieSermon:viewSlug
+          _format     : html
+    requirements:
+        year: \d{4}
+        format: php|html
+
+#route categorie Media
+meupf_categorie_media_home:
+    path:     /media/categorie/{page}
+    defaults: { _controller: MeupfPlateformBundle:CategorieMedia:index, page: 1 }
+    requirements:
+       page: \d*
+
+meupf_categorie_media_view:
+    path:    /media/categorie/{id}
+    defaults: { _controller: MeupfPlateformBundle:CategorieMedia:view }
+    requirements:
+         id: \d+
+
+meupf_categorie_media_add:
+    path:    /media/categorie/add
+    defaults: { _controller: MeupfPlateformBundle:CategorieMedia:add }
+
+
+meupf_categorie_media_edit:
+    path:    /media/categorie/edit/{id}
+    defaults: { _controller: MeupfPlateformBundle:CategorieMedia:edit }
+    requirements:
+        id: \d+
+
+meupf_categorie_media_delete:
+    path:    /media/categorie/delete/{id}
+    defaults: { _controller: MeupfPlateformBundle:CategorieMedia:delete }
+    requirements:
+        id: \d+
+
+meupf_categorie_media_view_slug:
+    path:    /media/categorie/{year}/{slug}.{format}
+    defaults:
+          _controller: MeupfPlateformBundle:CategorieMedia:viewSlug
+          _format     : html
+    requirements:
+        year: \d{4}
+        format: php|html
+
+#route temoignage
+meupf_temoignage_home:
+    path:     /temoignage/{page}
+    defaults: { _controller: MeupfPlateformBundle:Temoignage:index, page: 1 }
+    requirements:
+       page: \d*
+
+meupf_temoignage_view:
+    path:    /temoignage/{id}
+    defaults: { _controller: MeupfPlateformBundle:Temoignage:view }
+    requirements:
+         id: \d+
+
+meupf_temoignage_add:
+    path:    /temoignage/add
+    defaults: { _controller: MeupfPlateformBundle:Temoignage:add }
+
+
+meupf_temoignage_edit:
+    path:    /temoignage/edit/{id}
+    defaults: { _controller: MeupfPlateformBundle:Temoignage:edit }
+    requirements:
+        id: \d+
+
+meupf_temoignage_delete:
+    path:    /temoignage/delete/{id}
+    defaults: { _controller: MeupfPlateformBundle:Temoignage:delete }
+    requirements:
+        id: \d+
+
+meupf_temoignage_view_slug:
+    path:    /temoignage/{year}/{slug}.{format}
+    defaults:
+          _controller: MeupfPlateformBundle:Temoignage:viewSlug
+          _format     : html
+    requirements:
+        year: \d{4}
+        format: php|html
+
+#route categorie event
+meupf_categorie_event_home:
+    path:    /event/categorie/{page}
+    defaults: { _controller: MeupfPlateformBundle:CategorieEvent:index, page: 1 }
+    requirements:
+       page: \d*
+
+meupf_categorie_event_view:
+    path:    /event/categorie/{id}
+    defaults: { _controller: MeupfPlateformBundle:CategorieEvent:view }
+    requirements:
+         id: \d+
+
+meupf_categorie_event_add:
+    path:    /event/categorie/add
+    defaults: { _controller: MeupfPlateformBundle:CategorieEvent:add }
+
+
+meupf_categorie_event_edit:
+    path:    /event/categorie/edit/{id}
+    defaults: { _controller: MeupfPlateformBundle:CategorieEvent:edit }
+    requirements:
+        id: \d+
+
+meupf_categorie_event_delete:
+    path:    /event/categorie/delete/{id}
+    defaults: { _controller: MeupfPlateformBundle:CategorieEvent:delete }
+    requirements:
+        id: \d+
+
+meupf_categorie_event_view_slug:
+    path:    /event/categorie/{year}/{slug}.{format}
+    defaults:
+          _controller: MeupfPlateformBundle:CategorieEvent:viewSlug
+          _format     : html
+    requirements:
+        year: \d{4}
+        format: php|html
+
+#route page
+meupf_page_home:
+    path:     /page/{page}
+    defaults: { _controller: MeupfPlateformBundle:Page:index, page: 1 }
+    requirements:
+       page: \d*
+
+meupf_page_view:
+    path:    /page/{id}
+    defaults: { _controller: MeupfPlateformBundle:Page:view }
+    requirements:
+         id: \d+
+
+meupf_page_add:
+    path:    /page/add
+    defaults: { _controller: MeupfPlateformBundle:Page:add }
+
+
+meupf_page_edit:
+    path:    /page/edit/{id}
+    defaults: { _controller: MeupfPlateformBundle:Page:edit }
+    requirements:
+        id: \d+
+
+meupf_page_delete:
+    path:    /page/delete/{id}
+    defaults: { _controller: MeupfPlateformBundle:Page:delete }
+    requirements:
+        id: \d+
+
+meupf_page_view_slug:
+    path:    /page/{year}/{slug}.{format}
+    defaults:
+          _controller: MeupfPlateformBundle:Page:viewSlug
+          _format     : html
+    requirements:
+        year: \d{4}
+        format: php|html
+
+#route service
+meupf_service_home:
+    path:     /service/{page}
+    defaults: { _controller: MeupfPlateformBundle:Service:index, page: 1 }
+    requirements:
+       page: \d*
+
+meupf_service_view:
+    path:    /service/{id}
+    defaults: { _controller: MeupfPlateformBundle:Service:view }
+    requirements:
+         id: \d+
+
+meupf_service_add:
+    path:    /service/add
+    defaults: { _controller: MeupfPlateformBundle:Service:add }
+
+
+meupf_service_edit:
+    path:    /service/edit/{id}
+    defaults: { _controller: MeupfPlateformBundle:Service:edit }
+    requirements:
+        id: \d+
+
+meupf_service_delete:
+    path:    /service/delete/{id}
+    defaults: { _controller: MeupfPlateformBundle:Service:delete }
+    requirements:
+        id: \d+
+
+meupf_service_view_slug:
+    path:    /service/{year}/{slug}.{format}
+    defaults:
+          _controller: MeupfPlateformBundle:Service:viewSlug
+          _format     : html
+    requirements:
+        year: \d{4}
+        format: php|html
+
+#route event
+meupf_event_home:
+    path:     /event/
+    defaults: { _controller: MeupfPlateformBundle:Event:index}
+
+
+meupf_event_view:
+    path:    /event/{id}
+    defaults: { _controller: MeupfPlateformBundle:Event:view }
+    requirements:
+         id: \d+
+
+meupf_event_add:
+    path:    /event/add
+    defaults: { _controller: MeupfPlateformBundle:Event:add }
+
+
+meupf_event_edit:
+    path:    /event/edit/{id}
+    defaults: { _controller: MeupfPlateformBundle:Event:edit }
+    requirements:
+        id: \d+
+
+meupf_event_delete:
+    path:    /event/delete/{id}
+    defaults: { _controller: MeupfPlateformBundle:Event:delete }
+    requirements:
+        id: \d+
+
+meupf_event_view_slug:
+    path:    /event/{year}/{slug}.{format}
+    defaults:
+          _controller: MeupfPlateformBundle:Event:viewSlug
+          _format     : html
+    requirements:
+        year: \d{4}
+        format: php|html
+
+# route sermon
+meupf_sermon_home:
+    path:     /sermon/{page}
+    defaults: { _controller: MeupfPlateformBundle:Sermon:index, page: 1 }
+    requirements:
+       page: \d*
+
+meupf_sermon_view:
+    path:    /sermon/{id}
+    defaults: { _controller: MeupfPlateformBundle:Sermon:view }
+    requirements:
+         id: \d+
+
+meupf_sermon_add:
+    path:    /sermon/add
+    defaults: { _controller: MeupfPlateformBundle:Sermon:add }
+
+
+meupf_sermon_edit:
+    path:    /sermon/edit/{id}
+    defaults: { _controller: MeupfPlateformBundle:Sermon:edit }
+    requirements:
+        id: \d+
+
+meupf_sermon_delete:
+    path:    /sermon/delete/{id}
+    defaults: { _controller: MeupfPlateformBundle:Sermon:delete }
+    requirements:
+        id: \d+
+
+meupf_sermon_view_slug:
+    path:    /sermon/{year}/{slug}
+    defaults:
+          _controller: MeupfPlateformBundle:Sermon:viewSlug
+          _format     : html
+    requirements:
+        year: \d{4}
+        format: php|html
+
+#route media
+meupf_media_home:
+    path:     /media/{page}
+    defaults: { _controller: MeupfPlateformBundle:Media:index, page: 1 }
+    requirements:
+       page: \d*
+
+meupf_media_view:
+    path:    /media/{id}
+    defaults: { _controller: MeupfPlateformBundle:Media:view }
+    requirements:
+         id: \d+
+
+meupf_media_add:
+    path:    /media/add
+    defaults: { _controller: MeupfPlateformBundle:Media:add }
+
+
+meupf_media_edit:
+    path:    /media/edit/{id}
+    defaults: { _controller: MeupfPlateformBundle:Media:edit }
+    requirements:
+        id: \d+
+
+meupf_media_delete:
+    path:    /media/delete/{id}
+    defaults: { _controller: MeupfPlateformBundle:Media:delete }
+    requirements:
+        id: \d+
+
+meupf_media_view_slug:
+    path:    /media/{year}/{slug}.{format}
+    defaults:
+          _controller: MeupfPlateformBundle:Media:viewSlug
+          _format     : html
+    requirements:
+        year: \d{4}
+        format: php|html
+
+#route slider
+meupf_slider_home:
+    path:     /slider/{page}
+    defaults: { _controller: MeupfPlateformBundle:Slider:index, page: 1 }
+    requirements:
+       page: \d*
+
+meupf_slider_view:
+    path:    /slider/{id}
+    defaults: { _controller: MeupfPlateformBundle:Slider:view }
+    requirements:
+         id: \d+
+
+meupf_slider_add:
+    path:    /slider/add
+    defaults: { _controller: MeupfPlateformBundle:Slider:add }
+
+
+meupf_slider_edit:
+    path:    /slider/edit/{id}
+    defaults: { _controller: MeupfPlateformBundle:Slider:edit }
+    requirements:
+        id: \d+
+
+meupf_slider_delete:
+    path:    /slider/delete/{id}
+    defaults: { _controller: MeupfPlateformBundle:Slider:delete }
+    requirements:
+        id: \d+
+
+meupf_slider_view_slug:
+    path:    /slider/{year}/{slug}.{format}
+    defaults:
+          _controller: MeupfPlateformBundle:Slider:viewSlug
+          _format     : html
+    requirements:
+        year: \d{4}
+        format: php|html
+
+#route frontend
+meupf_plateform_home:
+    path:    /plateform/
+    defaults:
+         _controller: MeupfPlateformBundle:Home:index
+         _format    : html
+    requirements:
+         year: \d{4}
+         format: php|html
+
+#route responsable
+meupf_responsable_home:
+    path:     /responsable/{page}
+    defaults: { _controller: MeupfPlateformBundle:Responsable:index, page: 1 }
+    requirements:
+        page: \d*
+
+meupf_responsable_add:
+    path:     /responsable/add
+    defaults: { _controller: MeupfPlateformBundle:Responsable:add }
+
+meupf_responsable_edit:
+    path:     /responsable/edit/{id}
+    defaults: { _controller: MeupfPlateformBundle:Responsable:edit }
+    requirements:
+        id: \d+
+meupf_responsable_view_slug:
+    path:    /responsable/{year}/{slug}.{format}
+    defaults:
+          _controller: MeupfPlateformBundle:Responsable:viewSlug
+          _format     : html
+    requirements:
+        year: \d{4}
+        format: php|html
+
+meupf_responsable_view:
+    path:    /responsable/{id}
+    defaults: { _controller: MeupfPlateformBundle:Responsable:view }
+    requirements:
+         id: \d+
+
+
+meupf_responsable_delete:
+    path:     /responsable/delete/{id}
+    defaults: { _controller: MeupfPlateformBundle:Responsable:delete }
+    requirements:
+        id: \d+
+
+#route gallerie
+meupf_gallerie_home:
+    path:     /gallerie/{page}
+    defaults: { _controller: MeupfPlateformBundle:Gallery:index, page: 1 }
+    requirements:
+       page: \d*
+
+meupf_gallerie_view:
+    path:    /gallerie/{id}
+    defaults: { _controller: MeupfPlateformBundle:Gallery:view }
+    requirements:
+         id: \d+
+
+meupf_gallerie_add:
+    path:    /gallerie/add
+    defaults: { _controller: MeupfPlateformBundle:Gallery:add }
+
+
+meupf_gallerie_edit:
+    path:    /gallerie/edit/{id}
+    defaults: { _controller: MeupfPlateformBundle:Gallery:edit }
+    requirements:
+        id: \d+
+
+meupf_gallerie_delete:
+    path:    /gallerie/delete/{id}
+    defaults: { _controller: MeupfPlateformBundle:Gallery:delete }
+    requirements:
+        id: \d+
+
+meupf_gallerie_view_slug:
+    path:    /gallerie/{year}/{slug}.{format}
+    defaults:
+          _controller: MeupfPlateformBundle:Gallery:viewSlug
+          _format     : html
+    requirements:
+        year: \d{4}
+        format: php|html
+

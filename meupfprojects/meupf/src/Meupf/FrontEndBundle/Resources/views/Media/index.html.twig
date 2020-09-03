@@ -1,0 +1,24 @@
+{{  include('MeupfFrontEndBundle::header.html.twig') }}
+{{  include('MeupfFrontEndBundle:Media:media_header.html.twig') }}
+{% block body %}
+    <!-- Start Content -->
+    <div class="main" role="main">
+        <div id="content" class="content full">
+            <div class="container">
+                <div class="row">
+                    <ul class="isotope-grid" data-sort-id="gallery">
+                        {% for media in medias %}
+                            <li class="col-md-4 col-sm-4 grid-item post format-video">
+                                <div class="grid-item-inner"><a href="https://youtu.be/{{ media.url }}" data-rel="prettyPhoto" class="media-box"> <img src="http://img.youtube.com/vi/{{ media.url }}/hqdefault.jpg" alt=""> </a><strong>{{ media.title }}</strong></div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                {{ knp_pagination_render(medias) }}
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{{  include('MeupfFrontEndBundle::footer.html.twig') }}

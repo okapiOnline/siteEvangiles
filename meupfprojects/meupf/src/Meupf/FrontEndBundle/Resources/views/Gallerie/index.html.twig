@@ -1,0 +1,54 @@
+{{  include('MeupfFrontEndBundle::header.html.twig') }}
+<!-- Start Nav Backed Header -->
+<div class="nav-backed-header parallax" style="background-image:url(images/slide1.jpg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ol class="breadcrumb">
+                    <li><a href="index-2.html">Home</a></li>
+                    <li class="active">Gallery 4 Columns Filter</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Nav Backed Header -->
+<!-- Start Page Header -->
+<div class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>Gallerie photos</h1>
+            </div>
+            <div class="col-md-6">
+                <div class="gallery-filter">
+                    <ul class="nav nav-pills sort-source" data-sort-id="gallery" data-option-key="filter">
+                        <li data-option-value="*" class="active"><a href="#"><i class="fa fa-th"></i> <span>Show All</span></a></li>
+                        <li data-option-value=".format-image"><a href="#"><i class="fa fa-picture-o"></i> <span>Image</span></a></li>
+                        <li data-option-value=".format-link"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
+                        <li data-option-value=".format-gallery"><a href="#"><i class="fa fa-camera"></i> <span>Slideshow</span></a></li>
+                        <li data-option-value=".format-video"><a href="#"><i class="fa fa-play"></i> <span>Video</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Page Header -->
+<!-- Start Content -->
+<div class="main" role="main">
+    <div id="content" class="content full">
+        <div class="container">
+            <div class="row">
+                <ul class="sort-destination" data-sort-id="gallery">
+                    {% for img in images %}
+                        <li class="col-md-3 col-sm-3 grid-item post format-image">
+                            <div class="grid-item-inner"> <a href="{{ img.image }}"  class="media-box" data-rel="prettyPhoto[Gallery]"> <img src="{{ img.image }}" alt=""> </a> </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{{ include('MeupfFrontEndBundle::footer.html.twig') }}

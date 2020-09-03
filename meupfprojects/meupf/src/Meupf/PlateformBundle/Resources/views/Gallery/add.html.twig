@@ -1,0 +1,15 @@
+{% extends "MeupfPlateformBundle::layout.html.twig" %}
+{% block title %}{{ parent() }} - Gallerie{% endblock %}
+{% block body %}
+
+    <h2>Ajouter une image</h2>
+    <hr/>
+
+    {{ include("MeupfPlateformBundle:Gallery:form.html.twig") }}
+
+    <p>
+        Attention : l'image sera ajouté directement
+        sur la page d'accueil après validation du formulaire.
+    </p>
+
+{% endblock %}

@@ -1,0 +1,179 @@
+meupf_front_end_home:
+    path:     /
+    defaults: { _controller: MeupfFrontEndBundle:Front:index }
+
+meupf_front_end_view:
+    path:    /post/{id}
+    defaults: { _controller: MeupfFrontEndBundle:Front:view }
+    requirements:
+         id: \d+
+
+
+meupf_front_end_view_slug:
+    path:    /post/{year}/{id}/{slug}
+    defaults:
+          _controller: MeupfFrontEndBundle:Front:view
+          _format     : html
+    requirements:
+        year: \d{4}
+        format: php|html
+
+
+meupf_front_end_sermon_view_slug:
+    path:    /sermon/{year}/{id}/{slug}
+    defaults:
+          _controller: MeupfFrontEndBundle:Front:viewSermon
+          _format     : html
+    requirements:
+        year: \d{4}
+        format: php|html
+
+
+meupf_front_end_temoignage_view_slug:
+    path:    /temoignage/{year}/{id}/{slug}
+    defaults:
+          _controller: MeupfFrontEndBundle:Front:viewTemoignage
+          _format     : html
+    requirements:
+        year: \d{4}
+        format: php|html
+
+
+meupf_front_end_view_event_slug:
+    path:    /event/{year}/{id}/{slug}
+    defaults:
+          _controller: MeupfFrontEndBundle:Front:viewEvent
+          _format     : html
+    requirements:
+        year: \d{4}
+        format: php|html
+
+
+meupf_front_end_all_event:
+    path:    /events/
+    defaults:
+          _controller: MeupfFrontEndBundle:Front:events
+          _format     : html
+    requirements:
+        year: \d{4}
+        format: php|html
+
+meupf_front_end_contact:
+    path:    /contact/
+    defaults:
+          _controller: MeupfFrontEndBundle:Front:contact
+          _format     : html
+    requirements:
+        format: php|html
+
+meupf_front_end_about:
+    path:    /qui-somme-nous/
+    defaults:
+          _controller: MeupfFrontEndBundle:Front:aboutUs
+          _format     : html
+    requirements:
+        format: php|html
+
+meupf_front_end_responsable:
+    path:    /equipe-pastorale/
+    defaults:
+          _controller: MeupfFrontEndBundle:Front:responsable
+          _format     : html
+    requirements:
+        format: php|html
+
+meupf_front_end_fondement:
+    path:    /fondement/
+    defaults:
+          _controller: MeupfFrontEndBundle:Front:fondement
+          _format     : html
+    requirements:
+        format: php|html
+
+meupf_front_end_temoignage:
+    path:    /temoignages/
+    defaults:
+          _controller: MeupfFrontEndBundle:Front:temoignages
+          _format     : html
+    requirements:
+        format: php|html
+
+meupf_front_end_media:
+    path:    /pain-de-vie/
+    defaults:
+          _controller: MeupfFrontEndBundle:Front:media
+          _format     : html
+    requirements:
+        format: php|html
+
+
+meupf_front_end_media_page:
+    path:    /pain-de-vie/{page}
+    defaults:
+          _controller: MeupfFrontEndBundle:Front:media
+          _format     : html
+    requirements:
+        format: php|html
+        page: \d+
+
+
+meupf_front_end_sermon:
+    path:    /sermons/
+    defaults:
+          _controller: MeupfFrontEndBundle:Front:sermons
+          _format     : html
+    requirements:
+        format: php|html
+
+
+meupf_front_end_all_sermon_slug:
+    path:    /categorie/sermorns/{id}/{slug}
+    defaults:
+          _controller: MeupfFrontEndBundle:Front:sermonsByCategorie
+          _format     : html
+    requirements:
+        year: \d{4}
+        format: php|html
+
+meupf_front_end_all_article_slug:
+    path:    /categorie/articles/{id}/{slug}
+    defaults:
+          _controller: MeupfFrontEndBundle:Front:articlesByCategorie
+          _format     : html
+    requirements:
+        year: \d{4}
+        format: php|html
+
+
+meupf_front_end_histoire:
+    path:    /histoire/
+    defaults:
+          _controller: MeupfFrontEndBundle:Front:histoire
+          _format     : html
+    requirements:
+        format: php|html
+
+meupf_front_end_article:
+    path:    /articles/
+    defaults:
+          _controller: MeupfFrontEndBundle:Front:articles
+          _format     : html
+    requirements:
+        format: php|html
+
+meupf_front_end_gallerie:
+    path:    /gallerie/
+    defaults:
+          _controller: MeupfFrontEndBundle:Front:gallerie
+          _format     : html
+    requirements:
+        format: php|html
+
+meupf_front_end_comment_create:
+    path:    /comment/{article_id}
+    defaults:
+         _controller: MeupfFrontEndBundle:Comment:create
+         _format    : html
+    requirements:
+         _method: POST
+         article_id: \d+

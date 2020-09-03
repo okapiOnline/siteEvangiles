@@ -1,0 +1,43 @@
+
+meupf_user_registration_home:
+    path:     /users/{page}
+    defaults: { _controller: MeupfUserBundle:User:index, page: 1 }
+    requirements:
+       page: \d*
+
+meupf_user_registration_register:
+    path:     /user/add
+    defaults: { _controller: MeupfUserBundle:Registration:add}
+
+
+meupf_user_view:
+    path:    /user/{id}
+    defaults: { _controller: MeupfUserBundle:User:view }
+    requirements:
+         id: \d+
+
+meupf_user_add:
+    path:    /user/register
+    defaults: { _controller: MeupfUserBundle:User:add }
+
+
+meupf_user_edit:
+    path:    /user/edit/{id}
+    defaults: { _controller: MeupfUserBundle:User:edit }
+    requirements:
+        id: \d+
+
+meupf_user_delete:
+    path:    /user/delete/{id}
+    defaults: { _controller: MeupfPlateformBundle:User:delete }
+    requirements:
+        id: \d+
+
+meupf_user_view_slug:
+    path:    /user/{year}/{slug}.{format}
+    defaults:
+          _controller: MeupfPlateformBundle:User:viewSlug
+          _format     : html
+    requirements:
+        year: \d{4}
+        format: php|html

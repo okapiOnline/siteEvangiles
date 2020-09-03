@@ -1,0 +1,55 @@
+{% extends "MeupfPlateformBundle::layout.html.twig" %}
+{% block title %}{{ parent() }} - evenement{% endblock %}
+
+{% block body  %}
+    <div class="span9">
+        <div class="row-fluid">
+            <div class="page-header">
+                <h1>Gestion <small>des evenements</small></h1>
+            </div>
+            {% if is_granted('ROLE_USER') %}
+                <p><a  class = 'btn btn-success' href="{{ path('meupf_event_add') }}"> Ajouter un evenement</a></p>
+            {% endif %}
+            <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                <thead>
+                <tr>
+                    <th>#Id</th>
+                    <th>Titre</th>
+                    <th>En ligne</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for event in listEvents %}
+                    <tr class="list-users">
+                        <td>{{ event.id}}</td>
+                        <td>{{ event.title}}</td>
+                        <td>
+                            {% if event.online == 1 %}
+                            <span class="label label-success">En ligne</span></td>
+                        {% else %}
+                            <span class="label label-important">Hors ligne</span></td>
+                        {% endif %}</td>
+
+                        <td>
+                            <div class="btn-group">
+                                <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="#">Actions <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{{ path('meupf_event_edit', { 'id': event.id }) }}"><i class="icon-pencil"></i> Editer</a></li>
+                                    <li><a class="confirmModal" href="{{ path('meupf_event_delete', { 'id': event.id }) }}"><i class="icon-trash"></i> Supprimer</a></li>
+                                    <li><a href="#"><i class="icon-user"></i> Details</a></li>
+                                </ul>
+                            </div>
+
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <div class="well">
+                    <ul class="pagination">{{ knp_pagination_render(listEvents) }}</ul>
+            </div>
+           <a href="{{ path('meupf_event_add') }}" class="btn btn-success">Ajouter un evenement</a>
+        </div>
+    </div>
+{% endblock %}

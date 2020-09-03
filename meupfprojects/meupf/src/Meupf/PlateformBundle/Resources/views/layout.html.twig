@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %} Mission par la foi {% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Admin panel developed with the Bootstrap from Twitter.">
+    <meta name="author" content="okapiNET">
+    <link rel="stylesheet" href = "{{  asset('/backend/css/bootstrap.css') }}" />
+    <link rel="stylesheet" href = "{{  asset('/backend/css/site.css') }} " />
+    <link rel="stylesheet" href = "{{  asset('/backend/css/bootstrap-responsive.css') }} " />
+    <link rel="stylesheet" href = "{{  asset('/backend/jquery-ui/jquery-ui.css') }} " />
+    <link rel="stylesheet" href = "{{  asset('/backend/timepicker/css/timepicki.css') }} " />
+    <style type="text/css">
+        .bs-example{
+            height: 20px;
+        }
+    </style>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Admin panel developed with the Bootstrap from Twitter.">
+    <meta name="author" content="okapi">
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="#">Meupf Administration</a>
+
+            <div class="btn-group pull-right">
+                <a class="btn" href="my-profile.html"><i class="icon-user"></i> Admin</a>
+                <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="{{ path('fos_user_profile_show') }}">Mon compte</a> </li>
+                    <li class="divider"></li>
+                    <li><a href="{{ path('fos_user_security_logout') }}">Se déconnecter</a></li>
+                </ul>
+            </div>
+            <div class="nav-collapse">
+                <ul class="nav">
+                    <li><a href="{{ path('meupf_dashboard_home')}}">Home</a></li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Users <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ path('meupf_user_registration_register')}}">Ajouter utilisateur</a></li>
+                            <li class="divider"></li>
+                            <li><a href="{{ path('meupf_user_registration_home')}}">Manager users</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{{ path('meupf_front_end_home') }}">Voir le site</a></li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Articles <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ path('meupf_article_home') }}">Article</a></li>
+                            <li class="divider"></li>
+                            <li><a href="{{ path('meupf_categorie_article_home') }}">Categorie</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{{ path('meupf_service_home') }}">Services</a></li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Evenements <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ path('meupf_event_home') }}">Evenement</a></li>
+                            <li class="divider"></li>
+                            <li><a href="{{ path('meupf_categorie_event_home') }}">Categorie</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Sermons <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ path('meupf_sermon_home') }}">Sermon</a></li>
+                            <li class="divider"></li>
+                            <li><a href="{{ path('meupf_categorie_sermon_home') }}">Categorie</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Media <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ path('meupf_slider_home') }}">Slider</a></li>
+                            <li class="divider"></li>
+                            <li><a href="{{ path('meupf_media_home') }}">Video</a></li>
+                            <li class="divider"></li>
+                            <li><a href="{{ path('meupf_gallerie_home') }}">Gallerie</a></li>
+                            <li class="divider"></li>
+                            <li><a href="{{ path('meupf_categorie_media_home') }}">Categorie</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{{ path('meupf_responsable_home') }}">Pasteur</a></li>
+                    <li><a href="{{ path('meupf_temoignage_home') }}">Temoignage</a></li>
+
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Roles <b class="caret"></b></a>
+
+                        <ul class="dropdown-menu">
+                            <li><a href="new-role.html">New Role</a></li>
+                            <li class="divider"></li>
+                            <li><a href="roles.html">Manage Roles</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="stats.html">Stats</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div><!--endMenu -->
+
+<!--BiginSidebar -->
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span3">
+            <div class="well sidebar-nav">
+                <ul class="nav nav-list">
+                    <li class="nav-header"><i class="icon-wrench"></i> Administration</li>
+                    <li class="active"><a href="users.html">Users</a></li>
+                    <li><a href="roles.html">Roles</a></li>
+                    <li class="nav-header"><i class="icon-signal"></i> Statistics</li>
+                    <li><a href="stats.html">General</a></li>
+                    <li><a href="user-stats.html">Users</a></li>
+                    <li><a href="visitor-stats.html">Visitors</a></li>
+                    <li class="nav-header"><i class="icon-user"></i> Profile</li>
+                    <li>Mon profile</li>
+                    <li><a href="#">Settings</a></li>
+                    <li>Deconnecter</li>
+                </ul>
+            </div>
+        </div>
+        <!-- endSideBar -->
+
+        <div class="span9">
+            {% if app.session.flashBag.has('success') %}
+            <div class="bs-example">
+                <div class="alert alert-success">
+                    <a href="#" class="close" data-dismiss="alert">&times;</a>
+                    {% for msg in app.session.flashBag.get('success') %}
+                        {{ msg }}
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+            <div class="row-fluid">
+                {% block body %}
+
+                {% endblock %}
+
+                {% block fos_user_content %}
+                    <div id="dialog-confirm" title="Confirmation de la suppression" style="display:none;">
+                        <p>
+                            <span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>
+                            Etes-vous sûr de vouloir supprimer cet élément ?
+                        </p>
+                    </div>
+                {% endblock %}
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<hr>
+
+<footer class="well">
+    &copy; Meupf 2016
+</footer>
+
+</div>
+
+<script src="{{ asset('/backend/js/jquery.js') }}"></script>
+<script src="{{ asset('/backend/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('/backend/jquery-ui/jquery-ui.js') }}"></script>
+<script src="{{ asset('/backend/timepicker/js/timepicki.js') }}"></script>
+<scrip src="https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js"></scrip>
+<scrip src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></scrip>
+<script>
+    $(document).ready(function() {
+        var theHREF;
+
+        $( "#dialog-confirm" ).dialog({
+            resizable: false,
+            height:160,
+            width:500,
+            autoOpen: false,
+            modal: true,
+            buttons: {
+                "Oui": function() {
+                    $( this ).dialog( "close" );
+                    window.location.href = theHREF;
+                },
+                "Annuler": function() {
+                    $( this ).dialog( "close" );
+                }
+            }
+        });
+
+        $("a.confirmModal").click(function(e) {
+            e.preventDefault();
+            theHREF = $(this).attr("href");
+            $("#dialog-confirm").dialog("open");
+        });
+
+        $(".alert-success").alert();
+        window.setTimeout(function() { $(".alert-success").alert('close').fadeIn; }, 2000);
+    });
+
+    $(document).ready(function() {
+        $('.dropdown-menu li a').hover(
+                function() {
+                    $(this).children('i').addClass('icon-white');
+                },
+                function() {
+                    $(this).children('i').removeClass('icon-white');
+                });
+
+        if($(window).width() > 760)
+        {
+            $('tr.list-users td div ul').addClass('pull-right');
+        }
+    });
+
+
+    $('#event_date').datepicker({
+        dateFormat: 'dd/mm/yy',
+        firstDay: 1
+    });
+
+    $( "#event_categorie" ).selectmenu();
+    $( "#sermon_categorie" ).selectmenu();
+    $( "#media_categorie" ).selectmenu();
+    $( "#meupf_plateformbundle_article_categorie" ).selectmenu();
+    $( "#fos_user_registration_form_roles_0" ).selectmenu();
+
+    $("#event_heureDebut").timepicki({
+        show_meridian:false,
+        min_hour_value:0,
+        max_hour_value:23,
+        step_size_minutes:1,
+        overflow_minutes:true,
+        increase_direction:'up',
+        disable_keyboard_mobile: true});
+    $("#event_heureFin").timepicki({
+        show_meridian:false,
+        min_hour_value:0,
+        max_hour_value:23,
+        step_size_minutes:1,
+        overflow_minutes:true,
+        increase_direction:'up',
+        disable_keyboard_mobile: true});
+
+</script>
+</body>
+</html>

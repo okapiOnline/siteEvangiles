@@ -1,0 +1,56 @@
+<section class="post-comments" id="comments">
+    <h3><i class="fa fa-comment"></i> Comments (4)</h3>
+    <ol class="comments">
+        <li>
+            <div class="post-comment-block">
+                <div class="img-thumbnail"> <img src="images/img_avatar.png" alt="avatar"> </div>
+                <a href="#" class="btn btn-primary btn-xs pull-right">Reply</a>
+                <h5>John Doe says</h5>
+                <span class="meta-data">Nov 23, 2013 at 7:58 pm</span>
+                <p>Curabitur nec nulla lectus, non hendrerit lorem. Quisque lorem risus, porttitor eget fringilla non, vehicula sed tortor. Proin enim quam, vulputate at lobortis quis, condimentum at justo. Phasellus nec nisi justo. Ut luctus sagittis nulla at dapibus. Aliquam ullamcorper commodo elit, quis ornare eros consectetur a.</p>
+            </div>
+        </li>
+        <li>
+            <div class="post-comment-block">
+                <div class="img-thumbnail"> <img src="images/img_avatar.png" alt="avatar"> </div>
+                <a href="#" class="btn btn-primary btn-xs pull-right">Reply</a>
+                <h5>John Doe says</h5>
+                <span class="meta-data">Nov 23, 2013 at 7:58 pm</span>
+                <p>Curabitur nec nulla lectus, non hendrerit lorem. Quisque lorem risus, porttitor eget fringilla non, vehicula sed tortor. Proin enim quam, vulputate at lobortis quis, condimentum at justo. Phasellus nec nisi justo. Ut luctus sagittis nulla at dapibus. Aliquam ullamcorper commodo elit, quis ornare eros consectetur a.</p>
+            </div>
+            <ul>
+                <li>
+                    <div class="post-comment-block">
+                        <div class="img-thumbnail"> <img src="images/img_avatar.png" alt="avatar"> </div>
+                        <a href="#" class="btn btn-primary btn-xs pull-right">Reply</a>
+                        <h5>John Doe says</h5>
+                        <span class="meta-data">Nov 23, 2013 at 7:58 pm</span>
+                        <p>Curabitur nec nulla lectus, non hendrerit lorem. Quisque lorem risus, porttitor eget fringilla non, vehicula sed tortor. Proin enim quam, vulputate at lobortis quis, condimentum at justo. Phasellus nec nisi justo. Ut luctus sagittis nulla at dapibus. Aliquam ullamcorper commodo elit, quis ornare eros consectetur a.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="post-comment-block">
+                        <div class="img-thumbnail"> <img src="images/img_avatar.png" alt="avatar"> </div>
+                        <a href="#" class="btn btn-primary btn-xs pull-right">Reply</a>
+                        <h5>John Doe says</h5>
+                        <span class="meta-data">Nov 23, 2013 at 7:58 pm</span>
+                        <p>Curabitur nec nulla lectus, non hendrerit lorem. Quisque lorem risus, porttitor eget fringilla non, vehicula sed tortor. Proin enim quam, vulputate at lobortis quis, condimentum at justo. Phasellus nec nisi justo. Ut luctus sagittis nulla at dapibus. Aliquam ullamcorper commodo elit, quis ornare eros consectetur a.</p>
+                    </div>
+                </li>
+            </ul>
+        </li>
+        {% for comment in comments %}
+            <li>
+                <div class="post-comment-block">
+                    <div class="img-thumbnail"> <img src="images/img_avatar.png" alt="avatar"> </div>
+                    <a href="#" class="btn btn-primary btn-xs pull-right">Reply</a>
+                    <h5>{{ comment.user }}</h5>
+                    <span class="meta-data"><time datetime="{{ comment.createdAt|date('c') }}">{{ comment.createdAt|date('l, F j, Y') }}</time> at 7:58 pm</span>
+                    <p>{{ comment.comment }}</p>
+
+                </div>
+            </li>
+        {% endfor  %}
+    </ol>
+</section>
+{# include 'MeupfFrontEndBundle:Comments:form.html.twig' with { 'comments': comments } #}

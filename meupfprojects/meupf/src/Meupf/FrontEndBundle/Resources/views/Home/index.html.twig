@@ -1,0 +1,116 @@
+{% extends "MeupfFrontEndBundle::layout.html.twig" %}
+{% block title %}{{ parent() }} - Index{% endblock %}
+{% block body %}
+    <!-- Start Content -->
+    <div class="main" role="main">
+        <div id="content" class="content full">
+            <div class="container">
+                <div class="row">
+                    <!-- Start Featured Blocks -->
+                    <div class="featured-blocks clearfix">
+                        <div class="col-md-4 col-sm-4 featured-block"> <a href="{{ path('meupf_front_end_responsable') }}" class="img-thumbnail"> <img src="{{ asset('frontend/images/staff.jpg') }}" alt="l'equipe pastorale"> <strong>l'equipe pastorale</strong> <span class="more">en savoir +</span> </a> </div>
+                        <div class="col-md-4 col-sm-4 featured-block"> <a href="{{ path('meupf_front_end_article') }}" class="img-thumbnail"> <img src="{{ asset('frontend/images/newhere.jpg') }}" alt="Tous les articles"> <strong>Tous les articles</strong> <span class="more">visualiser +</span> </a> </div>
+                        <div class="col-md-4 col-sm-4 featured-block"> <a href="{{ path('meupf_front_end_sermon') }}" class="img-thumbnail"> <img src="{{ asset('frontend/images/sermons.jpg') }}" alt="Sermons Archive"> <strong>Sermons Archive</strong> <span class="more">visualiser +</span> </a> </div>
+                    </div>
+                    <!-- End Featured Blocks -->
+                </div>
+                <div class="row">
+                    <div class="col-md-8 col-sm-6">
+                        <!-- Events Listing -->
+                        <div class="listing events-listing">
+                            <header class="listing-header">
+                                <h3>Evenements avenir</h3>
+                            </header>
+                            <section class="listing-cont">
+                                <ul>
+                                    {% for event in listEvents %}
+                                    <li class="item event-item">
+                                        <div class="event-date"> <span class="date">{{ event.createdAt|date('d') }}</span> <span class="month">{{ event.createdAt|date('M', "Europe/Paris") }}</span> </div>
+                                        <div class="event-detail">
+                                            <h4><a href="{{ path('meupf_front_end_view_event_slug', { 'id': event.id ,'slug': event.slug, 'year':  event.createdAt|date('Y')  }) }}">{{ event.title }}</a></h4>
+                                            <span class="event-dayntime meta-data">Monday | 07:00 AM</span> </div>
+                                        <div class="to-event-url">
+                                            <div><a href="{{ path('meupf_front_end_view_event_slug', { 'id': event.id ,'slug': event.slug, 'year':  event.createdAt|date('Y')  }) }}" class="btn btn-default btn-sm">Details</a></div>
+                                        </div>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </section>
+                        </div>
+                        <div class="spacer-30"></div>
+                        <!-- Latest News -->
+                        <div class="listing post-listing">
+                            <header class="listing-header">
+                                <h3>Articles recent</h3>
+                            </header>
+                            <section class="listing-cont">
+                                <ul>
+                                  {% for article in listArticles %}
+                                    <li class="item post">
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <div class="post-title">
+                                                    <span class="meta-data"><i class="fa fa-calendar"></i>{{  article.createdAt|date('l, j F, Y') }}</span></div>
+                                                <p>{{  article.content | truncate(250, false, '...') | raw }}</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                  {% endfor %}
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                    <!-- Start Sidebar -->
+                    <div class="col-md-4 col-sm-6">
+                        <!-- Latest Sermons -->
+                        <div class="listing sermons-listing">
+                            <header class="listing-header">
+                                <h3>Sermons Recent</h3>
+                            </header>
+                            <section class="listing-cont">
+                                <ul>
+                                    {% for lastSermonVideo in lastSermonVideos %}
+                                    <li class="item sermon featured-sermon"> <span class="date">{{  lastSermonVideo.createdAt|date('l, j F, Y') }}</span>
+                                        <h4><a href="{{ path('meupf_front_end_sermon_view_slug', { 'id': lastSermonVideo.id ,'slug': lastSermonVideo.slug, 'year':  lastSermonVideo.createdAt|date('Y')  }) }}">{{ lastSermonVideo.title }}</a></h4>
+                                        <div class="featured-sermon-video">
+                                            <iframe width="200" height="150" src="https://www.youtube.com/embed/{{ lastSermonVideo.url }}"  frameborder="0" ></iframe>
+                                        </div>
+                                        <p>{{ lastSermonVideo.content | raw }}</p>
+                                        <div class="sermon-actions"> <a href="#" data-placement="top" data-toggle="tooltip" data-original-title="Video"><i class="fa fa-video-camera"></i></a> <a href="#" data-placement="top" data-toggle="tooltip" data-original-title="Audio"><i class="fa fa-headphones"></i></a> <a href="#" data-placement="top" data-toggle="tooltip" data-original-title="Read online"><i class="fa fa-file-text-o"></i></a> <a href="#" data-placement="top" data-toggle="tooltip" data-original-title="Download PDF"><i class="fa fa-book"></i></a> </div>
+                                    </li>
+                                    {% endfor %}
+
+                                    {% for lastSermon in lastSermons %}
+                                    <li class="item sermon">
+                                        <h2 class="sermon-title"><a href="{{ path('meupf_front_end_sermon_view_slug', { 'id': lastSermon.id ,'slug': lastSermon.slug, 'year':  lastSermon.createdAt|date('Y')  }) }}">{{ lastSermon.title }}</a></h2>
+                                        <span class="meta-data"><i class="fa fa-calendar"></i>{{  lastSermon.createdAt|date('l, j F, Y') }}</span>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Start Featured Gallery -->
+    <div class="featured-gallery">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-3">
+                    <h4>Gallerie photos</h4>
+                    <a href="{{ path('meupf_front_end_gallerie') }}" class="btn btn-default btn-lg">Galleries</a> </div>
+                {% for img in images %}
+                   <div class="col-md-3 col-sm-3 post format-image">
+                       <a style="width:600; height:400;" href="{{ img.image }}" class="media-box" data-rel="prettyPhoto[Gallery]"> <img  src="{{ img.image }}" alt="{{ img.title }}"> </a>
+                   </div>
+                {% endfor %}
+                <!--div class="col-md-3 col-sm-3 post format-video"> <a href="{# asset('http://youtu.be/NEFfnbQlGo8') #}" class="media-box" data-rel="prettyPhoto[Gallery]"> <img src="../frontend/images/gallery-img2.jpg" alt=""> </a> </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- End Featured Gallery -->
+{% endblock %}

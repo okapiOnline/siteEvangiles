@@ -1,0 +1,48 @@
+{{  include('MeupfFrontEndBundle::header.html.twig') }}
+{{  include('MeupfFrontEndBundle:Post:post_header.html.twig') }}
+{% block body %}
+<!-- Start Content -->
+<div class="main" role="main">
+    <div id="content" class="content full">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <header class="single-post-header clearfix">
+                        <div class="pull-right post-comments-count"> <a href="#comments"><i class="fa fa-comment"></i> 23</a> </div>
+                        <h2 class="post-title">{{ article.title }}</h2>
+                    </header>
+                    <article class="post-content"> <span class="post-meta meta-data"><span><i class="fa fa-calendar"></i> Posté le {{  article.createdAt|date('d-m-Y') }}</span>
+                            {% for catpost in catposts %}
+                                {% if catpost.id == article.categorie.id %}
+                                     <span><i class="fa fa-archive"></i> Categories: <a href="{{ path('meupf_front_end_all_article_slug', { 'id': catpost.id ,'slug': catpost.slug  }) }}">{{ article.categorie.name }}</a></span></span>
+                                {% endif %}
+                            {% endfor %}
+                        <div class="featured-image"> <img src="{{ article.image }}" alt=""> </div>
+                        <p>{{  article.content | raw }}</p>
+                        <div class="post-meta"> <i class="fa fa-tags"></i> <a href="#">Faith</a>, <a href="#">Heart</a>, <a href="#">Love</a>, <a href="#">Praise</a>, <a href="#">Sin</a>, <a href="#">Soul</a> </div>
+                    </article>
+                    {% include 'MeupfFrontEndBundle:Comments:comment.html.twig' with { 'comments': comments } %}
+                </div>
+                <!-- Start Sidebar -->
+                <div class="col-md-3 sidebar">
+                    <div class="widget sidebar-widget search-form-widget">
+                        <div class="input-group input-group-lg">
+                            <input type="text" class="form-control" placeholder="Search Posts...">
+                <span class="input-group-btn">
+                <button class="btn btn-default" type="button"><i class="fa fa-search fa-lg"></i></button>
+                </span> </div>
+                    </div>
+                    {{ include('MeupfFrontEndBundle:Post:article_categorie_sidebar.html.twig') }}
+                    <div class="widget sidebar-widget">
+                        <div class="sidebar-widget-title">
+                            <h3>Post Tags</h3>
+                        </div>
+                        <div class="tag-cloud"> <a href="#">Faith</a> <a href="#">Heart</a> <a href="#">Love</a> <a href="#">Praise</a> <a href="#">Sin</a> <a href="#">Soul</a> <a href="#">Missions</a> <a href="#">Worship</a> <a href="#">Faith</a> <a href="#">Heart</a> <a href="#">Love</a> <a href="#">Praise</a> <a href="#">Sin</a> <a href="#">Soul</a> <a href="#">Missions</a> <a href="#">Worship</a> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{{  include('MeupfFrontEndBundle::footer.html.twig') }}

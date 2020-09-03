@@ -1,0 +1,22 @@
+meupf_front_end:
+    resource: "@MeupfFrontEndBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
+meupf_user:
+    resource: "@MeupfUserBundle/Resources/config/routing.yml"
+    prefix:   /plateform
+
+meupf_plateform:
+    resource: "@MeupfPlateformBundle/Resources/config/routing.yml"
+    prefix:   /plateform
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+    prefix:   /plateform/admin
+
+elfinder:
+     resource: "@FMElfinderBundle/Resources/config/routing.yml"
+
+
+

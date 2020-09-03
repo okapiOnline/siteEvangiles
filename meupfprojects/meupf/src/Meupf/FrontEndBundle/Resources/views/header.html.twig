@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html class="no-js">
+<head>
+    <!-- Basic Page Needs
+      ================================================== -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>{% block title %} Eglise Mission par la foi {% endblock %}</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <!-- Mobile Specific Metas
+      ================================================== -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <!-- CSS
+      ================================================== -->
+    <link href="{{  asset('frontend/css/bootstrap.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{  asset('frontend/plugins/mediaelement/mediaelementplayer.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{  asset('frontend/css/style.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{  asset('frontend/plugins/prettyphoto/css/prettyPhoto.css') }}" rel="stylesheet" type="text/css">
+    <!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="css/ie8.css" media="screen" /><![endif]-->
+    <!-- Color Style -->
+    <link class="alt" href="{{  asset('frontend/colors/color1.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{  asset('frontend/style-switcher/css/style-switcher.css') }}" rel="stylesheet" type="text/css">
+    <!-- SCRIPTS
+      ================================================== -->
+    <script src="{{  asset('frontend/js/modernizr.js') }}"></script><!-- Modernizr -->
+</head>
+<body>
+<!--[if lt IE 7]>
+<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+<![endif]-->
+<div class="body">
+    <!-- Start Site Header -->
+    <header class="site-header">
+        <div class="topbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 col-xs-8">
+                        <h1 class="logo"> <a href="{{ path('meupf_front_end_home') }}"><img src="{{  asset('frontend/images/logo.png') }}" alt="Logo"></a> </h1>
+                    </div>
+                    <div class="col-md-8 col-sm-6 col-xs-4">
+                        <ul class="top-navigation hidden-sm hidden-xs">
+                        </ul>
+                        <a href="#" class="visible-sm visible-xs menu-toggle"><i class="fa fa-bars"></i></a> </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-menu-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <nav class="navigation">
+                            <ul class="sf-menu">
+                                <li><a href="{{ path('meupf_front_end_home') }}">Acceuil</a></li>
+                                <li><a href="#">Eglise</a>
+                                    <ul class="dropdown">
+                                        <li><a href="{{ path('meupf_front_end_fondement') }}">Fondements</a></li>
+                                        <li><a href="{{ path('meupf_front_end_histoire') }}">Histoire</a></li>
+                                        <li><a href="{{ path('meupf_front_end_responsable') }}">Equipe</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="{{ path('meupf_front_end_all_event') }}">Evenements</a>
+                                </li>
+                                <li><a href="#">Media</a>
+                                    <ul class="dropdown">
+                                        <li><a href="{{ path('meupf_front_end_sermon') }}">Sermons</a></li>
+                                        <li><a href="{{ path('meupf_front_end_article') }}">Articles</a></li>
+                                        <li><a href="{{ path('meupf_front_end_temoignage') }}">Temoignages</a></li>
+                                        <li><a href="{{ path('meupf_front_end_media') }}">Pain de vie</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="{{ path('meupf_front_end_contact') }}">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- End Site Header -->

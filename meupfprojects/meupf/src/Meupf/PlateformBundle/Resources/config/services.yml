@@ -1,0 +1,5 @@
+services:
+    meupf_palteform.form.image:
+        class:    Meupf\plateform\form\ImageType
+        public:    false
+        tag: -{ name: form.type }

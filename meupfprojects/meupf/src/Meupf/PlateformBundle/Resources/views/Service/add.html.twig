@@ -1,0 +1,14 @@
+{% extends "MeupfPlateformBundle::layout.html.twig" %}
+
+{% block body %}
+
+    <h2>Ajouter un service</h2>
+
+    {{ include("MeupfPlateformBundle:Service:form.html.twig") }}
+
+    <p>
+        Attention : cet service sera ajoutée directement
+        sur la page d'accueil après validation du formulaire.
+    </p>
+
+{% endblock %}

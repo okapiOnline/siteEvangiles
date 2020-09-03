@@ -1,0 +1,12 @@
+{% extends "MeupfPlateformBundle::layout.html.twig" %}
+{% block title %}{{ parent() }} - utilisateurs{% endblock %}
+
+{% block body %}
+    {{ include("MeupfUserBundle:User:form.html.twig") }}
+
+    <p>
+        Attention : cet utilisateur sera modifier directement
+        sur la page d'accueil après validation du formulaire.
+    </p>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+services:
+#    meupf_front_end.example:
+#        class: Meupf\FrontEndBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]
+
+    meupf_front_end.beta.html:
+        class: Meupf\FrontEndBundle\Beta\BetaHTML
+
+    meupf_front_end.beta.listener:
+        class: Meupf\FrontEndBundle\Beta\BetaListener
+        arguments: [@meupf_front_end.beta.html, "2016-04-30"]
+        tags:
+            - { name: kernel.event_listener, event: kernel.response, method: processBeta }
+            - { name: kernel.event_listener, event: kernel.controller, method: ignoreBeta }

@@ -1,0 +1,16 @@
+{% extends "MeupfPlateformBundle::layout.html.twig" %}
+{% block title %}{{ parent() }} - Evenement{% endblock %}
+
+{% block body %}
+
+    <h2>Modifier un evenement</h2>
+    <hr/>
+
+    {{ include("MeupfPlateformBundle:Event:form.html.twig") }}
+
+    <p>
+        Attention : cet evenement sera modifier directement
+        sur la page d'accueil après validation du formulaire.
+    </p>
+
+{% endblock %}

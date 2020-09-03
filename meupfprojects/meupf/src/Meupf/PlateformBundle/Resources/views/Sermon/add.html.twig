@@ -1,0 +1,15 @@
+{% extends "MeupfPlateformBundle::layout.html.twig" %}
+{% block title %}{{ parent() }} - Posts{% endblock %}
+{% block body %}
+
+    <h2>Ajouter un sermon</h2>
+    <hr/>
+
+    {{ include("MeupfPlateformBundle:Sermon:form.html.twig") }}
+
+    <p>
+        Attention : cette sermon sera ajoutée directement
+        sur la page d'accueil après validation du formulaire.
+    </p>
+
+{% endblock %}

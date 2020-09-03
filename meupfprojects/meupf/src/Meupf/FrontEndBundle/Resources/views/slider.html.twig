@@ -1,0 +1,14 @@
+<!-- Start Hero Slider -->
+
+<div class="hero-slider flexslider clearfix" data-autoplay="yes" data-pagination="yes" data-arrows="yes" data-style="fade" data-pause="yes">
+    <ul class="slides">
+        {% for slide in listSlides %}
+            {% if slide.online == 1 %}
+                <li class=" parallax" style="background-image:url({{ slide.image }})"></li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+
+</div>
+
+<!-- End Hero Slider -->

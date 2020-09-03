@@ -1,0 +1,15 @@
+<div class="widget-upcoming-events widget">
+    <div class="sidebar-widget-title">
+        <h3>Evenement à venir</h3>
+    </div>
+    <ul>
+        {% for event in events %}
+        <li class="item event-item clearfix">
+            <div class="event-date"> <span class="date">{{  event.date|date('d') }}</span> <span class="month">{{ event.date|date('M', "Europe/Paris") }}</span> </div>
+            <div class="event-detail">
+                <h4><a href="#">{{ event.title }}</a></h4>
+                <span class="event-dayntime meta-data"> {{ event.date|date('l') }} | {{ event.heureDebut | date('h:i A') }}</span> </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>

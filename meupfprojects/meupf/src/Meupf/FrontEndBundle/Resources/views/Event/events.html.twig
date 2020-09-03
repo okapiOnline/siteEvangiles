@@ -1,0 +1,55 @@
+{{  include('MeupfFrontEndBundle::header.html.twig') }}
+<!-- Start Nav Backed Header -->
+<div class="nav-backed-header parallax" style="background-image:url({{ asset('frontend/images/slide1.jpg')}}">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ol class="breadcrumb">
+                    <li><a href="index-2.html">Acceuil</a></li>
+                    <li class="active">Grille des evenements</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Nav Backed Header -->
+<!-- Start Page Header -->
+<div class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Grille des evenements</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Page Header -->
+<!-- Start Content -->
+<div class="main" role="main">
+    <div id="content" class="content full">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="grid-holder col-3 events-grid">
+                        {% for event in events %}
+                            <li class="grid-item format-standard">
+                                <div class="grid-item-inner"> <a href="{{ path('meupf_front_end_view_event_slug', { 'id': event.id ,'slug': event.slug, 'year':  event.createdAt|date('Y')  }) }}" class="media-box"> <img src="{{ event.image }}" alt=""> </a>
+                                    <div class="grid-content">
+                                        <h3><a href="single-event.html">{{ event.title }}</a></h3>
+                                    </div>
+                                    <ul class="info-table">
+                                        <li><i class="fa fa-calendar"></i> <strong>{{ event.date|date('l') }}</strong> |  {{ event.heureDebut | date('h:i A') }} - {{ event.heureFin | date('h:i A') }}</li>
+                                        <li><i class="fa fa-map-marker"></i> {{ event.lieu }}</li>
+                                    </ul>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    {{ knp_pagination_render(events) }}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{  include('MeupfFrontEndBundle::footer.html.twig') }}

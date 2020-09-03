@@ -1,0 +1,14 @@
+{% extends "MeupfPlateformBundle::layout.html.twig" %}
+
+{% block fos_user_content %}
+
+    <div class="row" style="margin-left: 3px;">
+        <div class="span6">
+            <h4>Recuperation de votre mot de passe</h4>
+            <em>Entre un nouveau mot de passe pour vous connecter sur la platform</em>
+            <hr>
+        </div>
+    </div>
+
+{% include "FOSUserBundle:Resetting:reset_content.html.twig" %}
+{% endblock fos_user_content %}

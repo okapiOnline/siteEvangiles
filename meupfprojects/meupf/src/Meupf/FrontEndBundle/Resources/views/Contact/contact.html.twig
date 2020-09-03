@@ -1,0 +1,82 @@
+{{  include('MeupfFrontEndBundle::header.html.twig') }}
+<!-- Start Nav Backed Header -->
+<div class="nav-backed-header parallax">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ol class="breadcrumb">
+                    <li><a href="{{ path('meupf_front_end_home') }}">Acceuil</a></li>
+                    <li class="active">Contact</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Nav Backed Header -->
+<!-- Start Page Header -->
+<div class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Contact</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Page Header -->
+<!-- Start Content -->
+<div class="main" role="main">
+    <div id="content" class="content full">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <header class="single-post-header clearfix">
+                        <h2 class="post-title">Notre emplacement</h2>
+                    </header>
+                    <div class="post-content">
+                        <div id="gmap">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d171905.8684242993!2d7.136094623477549!3d47.6838529906323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47918ffd780f7d07%3A0xe38e74856b8e8ec4!2s89+Route+de+Mulhouse%2C+68720+Illfurth!5e0!3m2!1sfr!2sfr!4v1463298001800" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        </div>
+                        {{ form_start(form) }}
+                        <div class="row">
+                            <div class="col-md-6 margin-15">
+                                <div class="form-group">
+                                    {{ form_widget(form.name, { 'attr': {'class': 'form-control input-lg'} })  }}
+                                </div>
+                                <div class="form-group">
+                                    {{ form_widget(form.email, { 'attr': {'class': 'form-control input-lg'} })  }}
+                                </div>
+                                <div class="form-group">
+                                    {{ form_widget(form.phone, { 'attr': {'class': 'form-control input-lg'} })  }}
+                                </div>
+                                <div class="form-group">
+                                    {{ form_widget(form.subject, { 'attr': {'class': 'form-control input-lg'} })  }}
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {{ form_widget(form.message, { 'attr': {'class': 'form-control input-lg'} })  }}
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                {{ form_widget(form.Soumettre, { 'attr': {'class': 'btn btn-primary btn-lg pull-right'} })  }}
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-md-12">
+                                <div id="message">{{ form_errors(form) }}</div>
+                            </div>
+                        </div>
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+
+                <!-- Start Sidebar -->
+                <div class="col-md-3 sidebar">
+                    <!-- Recent Posts Widget -->
+                   {{ include('MeupfFrontEndBundle::recent_article_sidebar.html.twig') }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{  include('MeupfFrontEndBundle::footer.html.twig') }}

@@ -1,0 +1,12 @@
+<!-- Start Sidebar -->
+<div class="col-md-4 sidebar">
+    <div class="widget sidebar-widget">
+        <div class="sidebar-widget-title">
+            <h3>Categorie Sermon</h3>
+        </div>
+        <ul>
+            {% for catSermon in catSermons %}
+                 <li><a href="{{ path('meupf_front_end_all_sermon_slug', { 'id': catSermon.id ,'slug': catSermon.slug  }) }}">{{ catSermon.name }}</a> ({{ catSermon.postcount }})</li>
+            {% endfor %}
+        </ul>
+    </div>
